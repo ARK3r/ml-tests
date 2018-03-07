@@ -35,8 +35,8 @@ def read(dataset = "training", path = "."):
         yield get_img(i)
         
         
-test_size = 8000
-train_size = 40000
+test_size = 2000
+train_size = 10000
 
 
 training = list(read(dataset='training'))

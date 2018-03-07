@@ -15,9 +15,11 @@ def grad(theta):
         t1 += ( y[i] - ( theta[0] * x[i] + theta[1] ) )
     return [t0/len(x), t1/len(x)]
 
-for i in range(10000):
+error = 0.00000000000001
+
+for i in range(1000000):
     new_theta = grad(theta)
-    if new_theta[0] is 0:
+    if new_theta[0] < error and new_theta[0] > -error:
         break
     theta[0] += 0.01 * new_theta[0]
     theta[1] += 0.01 * new_theta[1]
